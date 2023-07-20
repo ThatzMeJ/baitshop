@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--ff-bodoni);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+  --ff-bodoni: 'Bodoni Moda', serif;
+  --container-background-color: rgba(var(--bg,var(--color_11)),var(--alpha-bg,1));
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.header img:nth-child(1) {
+  width: 300px;
+  height: 210px;
+}
+
+.header nav {
+  display: flex;
+  margin-right: auto;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  width: 200px;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+nav ul li {
+  position: relative;
+  margin: 0 20px;
+}
+
+nav ul li::after {
+  content: '';
+  height: 3px;
+  width: 0;
+  background: black;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.5s;
+}
+
+nav ul li:hover::after {
+  width: 100%;
+}
+.header h1 {
+  text-align: start;
+  width: 250px;
+  font-size: 2rem;
+  font-weight: 900;
+
+}
+
+.header img:nth-child(2) {
+  width: 200px;
+  height: 200px;
+}
+
+.index-body {
+  flex: 1 0 auto;
+  display: flex;
+}
+
+.content {
+  flex: 1 0 auto;
+  background-image: url(img/jonathan-zerger-yzzJbqQ1O-Y-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.main-content {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 55%;
+  margin: 0 auto;
+  margin-top: 40px;
+  gap: 10px;
+}
+
+.main-content h1 {
+  font-size: 2.78rem;
+  font-weight: 900;
+  color: white;
+}
+
+.main-content p {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.main-content button {
+  background-color: black;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 28px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.main-content button a {
+  color: white !important;
+}
+
+.main-content button:hover {
+  opacity: 0.7;
+}
+
+.offer {
+  width: 255px;
+  height: 342px;
+  background-color: transparent;
+  padding: 30px 20px;
+}
+
+
+
+.aside {
+  width: 400px;
+  background-image: url(img/fishing.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  
+}
+
+.aside-container {
+  width: 324px;
+  position: absolute;
+  height: 326px;
+  z-index: 4;
+  background-color: white;
+  border-radius: 20px;
+  top: 45%;
+  left: 19%;
+  padding: 0 1rem;
+}
+
+.aside-container h2 {
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+
+.aside-container div {
+  background-color: rgba(86, 111, 184);
+  display: flex;
+  justify-content: center;
+  width: max-content;
+  height: max-content;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 20px;
+  padding: 8px 20px;
+  transition: opacity 0.3s ease;
+}
+
+.aside-container div a{
+  text-decoration: none;
+  color: white;
+}
+
+.aside-container div span {
+  font-size: 2rem;
+}
+
+
+.aside-container div:hover{
+  opacity: 0.8;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  background: white;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+
+.social-icon__link {
+  font-size: 2rem;
+  color: black;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: black;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: black;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.menu .menu__item .menu__link{
+  position: relative;
+}
+
+
+.menu .menu__item .menu__link::after {
+  content: '';
+  height: 3px;
+  width: 0;
+  background: black;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.5s;
+}
+
+.menu .menu__item .menu__link:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .holygrail-body {
+    flex-direction: column;
+  }
+
+  .nav,
+  .aside {
+    width: 100%;
+  }
+}
+
+.main-content h1,.main-content p, .main-content button {
+  animation: slideIn 1s ease-out;
+}
+
+
+@keyframes slideIn {
+  0% {
+   transform: translateY(-20px);
+   opacity: 0;
+  }
+  100% {
+   transform: translateX(0);
+   opacity: 1;
+  }
+ }
+ 
+/* Pricing HTML Page */
+
+.pricing-body {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  background-image: url(img/pricing-bg.webp);
+  background-size: cover;
+  background-position: center;
+}
+
+.pricing-content {
+  background-color: rgba(255, 255, 255, 0.7); 
+  width: 940px;
+  height: 645px;
+  padding-left: 60px;
+  padding-right: 60px;
+  position: relative;
+}
+
+.price-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.price-title p {
+  margin-top: -8px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.live-cold-bait {
+  display: flex;
+  justify-content: space-between;
+}
+
+.live-bait {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+.live-bait h2 {
+  margin-bottom: -100px;
+}
+
+.name-col {
+  grid-column: 1;
+  font-weight: 700;
+  text-align: left;
+}
+
+.price-col {
+  grid-column: 2;
+  text-align: right;
+}
+
+
+.cold-bait {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.live-fish{
+  width: 241px;
+  height: 214px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.live-fish h2,
+.live-bait h2,
+.cold-bait h2 {
+  display: flex;
+}
+
+.red-text {
+  color: red;
+  position: absolute;
+  right: 100px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  top: 70%;
+}
